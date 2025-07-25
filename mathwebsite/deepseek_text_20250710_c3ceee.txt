@@ -1,0 +1,7 @@
+your-website/
+├── index.html       (Home page)
+├── teaching.html    (Teaching materials)
+├── contact.html     (Contact page)
+├── styles.css       (Styling)
+├── script.js        (Interactive elements)
+└── resources/       (Folder for PDFs/lecture notes)

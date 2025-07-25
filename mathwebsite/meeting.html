@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule an Appointment | Dr. Aijaz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #1a2530);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+        
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .position {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover, nav a.active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .page-title {
+            background: #f1f8ff;
+            padding: 20px 40px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .booking-container {
+            display: flex;
+            padding: 30px 40px;
+            gap: 30px;
+        }
+        
+        .calendar-section {
+            flex: 1;
+        }
+        
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .calendar-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .calendar-nav button {
+            background: #3498db;
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .calendar-nav button:hover {
+            background: #2980b9;
+        }
+        
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .calendar-day-name {
+            text-align: center;
+            padding: 10px;
+            font-weight: 600;
+            color: #555;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+        
+        .calendar-day {
+            text-align: center;
+            padding: 12px 5px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .calendar-day:hover {
+            background: #e3f2fd;
+        }
+        
+        .calendar-day.selected {
+            background: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .calendar-day.disabled {
+            color: #bbb;
+            cursor: not-allowed;
+            background: #f0f0f0;
+        }
+        
+        .time-slots {
+            margin-top: 30px;
+        }
+        
+        .time-slots h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .slots-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        
+        .time-slot {
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .time-slot:hover {
+            background: #e3f2fd;
+        }
+        
+        .time-slot.selected {
+            background: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .time-slot.booked {
+            background: #ffebee;
+            color: #e53935;
+            cursor: not-allowed;
+            text-decoration: line-through;
+        }
+        
+        .booking-form {
+            flex: 1;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            border: 1px solid #eee;
+        }
+        
+        .booking-form h2 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .submit-btn:hover {
+            background: #219653;
+        }
+        
+        .confirmation {
+            background: #e8f5e9;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 4px solid #27ae60;
+            display: none;
+        }
+        
+        .confirmation h3 {
+            color: #27ae60;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 900px) {
+            .booking-container {
+                flex-direction: column;
+            }
+            
+            .slots-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .header {
+                padding: 20px;
+            }
+            
+            .page-title, .booking-container {
+                padding: 20px;
+            }
+            
+            nav {
+                gap: 10px;
+            }
+            
+            nav a {
+                font-size: 14px;
+                padding: 6px 12px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .slots-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile">
+                <!--<div class="profile-img">DA</div>-->
+                <div class="name">Academic Support Portal</div>
+                <!--<div class="position">Assistant Professor of Mathematics</div>-->
+            </div>
+            
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="teaching.html">Teaching Materials</a>
+                <a href="https://www.youtube.com/@A.i.J.A.Z/videos">YouTube</a>
+                <a href="research.html">Research</a>
+                <a href="contact.html">Contact</a>
+                <a href="feedback.html" class="active">Go Back</a>
+            </nav>
+        </div>
+        
+        <div class="page-title">
+            <i class="fas fa-calendar-check"></i> Schedule an Appointment
+        </div>
+        
+        <div class="booking-container">
+            <div class="calendar-section">
+                <div class="calendar-header">
+                    <div class="calendar-title">October 2025</div>
+                    <div class="calendar-nav">
+                        <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                        <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="calendar">
+                    <div class="calendar-day-name">Sun</div>
+                    <div class="calendar-day-name">Mon</div>
+                    <div class="calendar-day-name">Tue</div>
+                    <div class="calendar-day-name">Wed</div>
+                    <div class="calendar-day-name">Thu</div>
+                    <div class="calendar-day-name">Fri</div>
+                    <div class="calendar-day-name">Sat</div>
+                    
+                    <!-- Calendar days will be populated by JavaScript -->
+                </div>
+                
+                <div class="time-slots">
+                    <h3><i class="fas fa-clock"></i> Available Time Slots</h3>
+                    <div class="slots-grid">
+                        <!--<div class="time-slot">9:00 AM</div>
+                        <div class="time-slot">9:30 AM</div>-->
+                        <div class="time-slot">10:00 AM</div>
+                        <div class="time-slot">10:30 AM</div>
+                        <div class="time-slot">11:00 AM</div>
+                        <div class="time-slot">11:30 AM</div>
+                        <div class="time-slot">1:00 PM</div>
+                        <div class="time-slot">1:30 PM</div>
+                        <div class="time-slot">2:00 PM</div>
+                        <div class="time-slot">2:30 PM</div>
+                        <div class="time-slot">3:00 PM</div>
+                        <div class="time-slot booked">3:30 PM</div>
+                        <!--<div class="time-slot booked">4:00 PM</div>-->
+                        <!--<div class="time-slot">4:30 PM</div>-->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="booking-form">
+                <h2><i class="fas fa-edit"></i> Appointment Details</h2>
+                
+                <div class="selected-date-time">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Selected Date</label>
+                            <input type="text" id="selected-date" placeholder="Select a date" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Selected Time</label>
+                            <input type="text" id="selected-time" placeholder="Select a time" readonly>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="full-name" placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email (Optional)">
+                    </div>
+                    <div class="form-group">
+                        <label>Student ID</label>
+                        <input type="text" id="student-id" placeholder="Enter your student ID (Mandatory)">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Course</label>
+                    <select id="course">
+                        <option value="">Select your course</option>
+                        <option value="calculus">Calculus I</option>
+                        <option value="linear-algebra">Linear Algebra</option>
+                        <option value="diff-eq">Differential Equations</option>
+                        <option value="discrete">Discrete Mathematics</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Purpose of Meeting</label>
+                    <select id="purpose">
+                        <option value="">Select purpose</option>
+                        <option value="consultation">Course Consultation</option>
+                        <option value="assignment">Assignment Help</option>
+                        <option value="research">Research Guidance</option>
+                        <option value="project">Project Discussion</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Additional Notes (Optional)</label>
+                    <textarea id="notes" rows="3" placeholder="Anything specific you'd like to discuss?"></textarea>
+                </div>
+                
+                <!--<button class="submit-btn" id="book-appointment">
+                    <i class="fas fa-calendar-plus"></i> Book Appointment
+                </button>-->
+                
+                <div class="confirmation" id="confirmation">
+                    <h3><i class="fas fa-check-circle"></i> Appointment Booked Successfully!</h3>
+                    <p>Your meeting with Dr. Aijaz has been scheduled.</p>
+                    <p><strong>Date:</strong> <span id="conf-date"></span></p>
+                    <p><strong>Time:</strong> <span id="conf-time"></span></p>
+                    <p>An email confirmation has been sent to your inbox. Please arrive 5 minutes before your scheduled time.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+         &copy; 2025 - Developed and Maintained by Dr. Aijaz.
+        </div>
+    </div>
+    
+    <script>
+        // Calendar functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Calendar navigation
+            const calendarDays = document.querySelector('.calendar');
+            const prevBtn = document.getElementById('prev-month');
+            const nextBtn = document.getElementById('next-month');
+            const monthTitle = document.querySelector('.calendar-title');
+            const selectedDate = document.getElementById('selected-date');
+            const selectedTime = document.getElementById('selected-time');
+            const confirmation = document.getElementById('confirmation');
+            const confDate = document.getElementById('conf-date');
+            const confTime = document.getElementById('conf-time');
+            
+            let currentDate = new Date(2025, 9, 1); // October 2025 (month is 0-indexed)
+            
+            // Render calendar
+            function renderCalendar() {
+                // Set month title
+                const monthNames = ["January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"
+                ];
+                monthTitle.textContent = `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+                
+                // Clear existing days
+                calendarDays.innerHTML = `
+                    <div class="calendar-day-name">Sun</div>
+                    <div class="calendar-day-name">Mon</div>
+                    <div class="calendar-day-name">Tue</div>
+                    <div class="calendar-day-name">Wed</div>
+                    <div class="calendar-day-name">Thu</div>
+                    <div class="calendar-day-name">Fri</div>
+                    <div class="calendar-day-name">Sat</div>
+                `;
+                
+                // Get first day of month
+                const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+                const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+                
+                // Days in previous month
+                const prevLastDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
+                
+                // Starting day (0 = Sunday, 1 = Monday, etc)
+                const startDay = firstDay.getDay();
+                
+                // Days in current month
+                const daysInMonth = lastDay.getDate();
+                
+                // Render previous month days
+                for (let i = startDay; i > 0; i--) {
+                    const day = document.createElement('div');
+                    day.className = 'calendar-day disabled';
+                    day.textContent = prevLastDay - i + 1;
+                    calendarDays.appendChild(day);
+                }
+                
+                // Render current month days
+                for (let i = 1; i <= daysInMonth; i++) {
+                    const day = document.createElement('div');
+                    day.className = 'calendar-day';
+                    day.textContent = i;
+                    
+                    // Highlight today
+                    const today = new Date();
+                    if (i === today.getDate() && currentDate.getMonth() === today.getMonth() && currentDate.getFullYear() === today.getFullYear()) {
+                        day.classList.add('selected');
+                        const dateStr = `${today.getDate()} ${monthNames[today.getMonth()]} ${today.getFullYear()}`;
+                        selectedDate.value = dateStr;
+                    }
+                    
+                    day.addEventListener('click', function() {
+                        // Remove selection from all days
+                        document.querySelectorAll('.calendar-day').forEach(d => {
+                            d.classList.remove('selected');
+                        });
+                        
+                        // Select clicked day
+                        this.classList.add('selected');
+                        
+                        // Update selected date
+                        const dateStr = `${i} ${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+                        selectedDate.value = dateStr;
+                    });
+                    
+                    calendarDays.appendChild(day);
+                }
+            }
+            
+            // Initialize calendar
+            renderCalendar();
+            
+            // Navigation buttons
+            prevBtn.addEventListener('click', function() {
+                currentDate.setMonth(currentDate.getMonth() - 1);
+                renderCalendar();
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                currentDate.setMonth(currentDate.getMonth() + 1);
+                renderCalendar();
+            });
+            
+            // Time slot selection
+            document.querySelectorAll('.time-slot:not(.booked)').forEach(slot => {
+                slot.addEventListener('click', function() {
+                    // Remove selection from all slots
+                    document.querySelectorAll('.time-slot').forEach(s => {
+                        s.classList.remove('selected');
+                    });
+                    
+                    // Select clicked slot
+                    this.classList.add('selected');
+                    
+                    // Update selected time
+                    selectedTime.value = this.textContent;
+                });
+            });
+            
+            // Book appointment
+            document.getElementById('book-appointment').addEventListener('click', function() {
+                if (!selectedDate.value || !selectedTime.value) {
+                    alert('Please select a date and time for your appointment');
+                    return;
+                }
+                
+                const fullName = document.getElementById('full-name').value;
+                if (!fullName) {
+                    alert('Please enter your full name');
+                    return;
+                }
+                
+                // Show confirmation
+                confDate.textContent = selectedDate.value;
+                confTime.textContent = selectedTime.value;
+                confirmation.style.display = 'block';
+                
+                // Scroll to confirmation
+                confirmation.scrollIntoView({ behavior: 'smooth' });
+                
+                // Reset form after 5 seconds (simulating booking)
+                setTimeout(() => {
+                    document.querySelectorAll('.calendar-day').forEach(d => {
+                        d.classList.remove('selected');
+                    });
+                    document.querySelectorAll('.time-slot').forEach(s => {
+                        s.classList.remove('selected');
+                    });
+                    document.getElementById('selected-date').value = '';
+                    document.getElementById('selected-time').value = '';
+                    document.getElementById('full-name').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('student-id').value = '';
+                    document.getElementById('course').value = '';
+                    document.getElementById('purpose').value = '';
+                    document.getElementById('notes').value = '';
+                    confirmation.style.display = 'none';
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
