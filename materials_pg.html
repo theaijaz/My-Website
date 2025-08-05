@@ -213,6 +213,19 @@
             
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
         * {
             margin: 0;
             padding: 0;
@@ -266,39 +279,13 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-family: 'Poppins';
-            font-size: 14px;
         }
-         nav a:hover, nav a.active {
+        
+        nav a:hover, nav a.active {
             background: rgba(255, 255, 255, 0.15);
         }
-
-         nav h2 {
-            color: rgb(17, 21, 95);
-            font-size: 19px;
-            font-weight: 600;
-            padding: 8px 20px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
-
-         nav h3 {
-            color: rgb(0, 0, 0);
-            font-size: 16px;
-            font-weight: 600;
-            padding: 8px 20px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-family: 'Times New Roman';
-        }
-
-         nav b:hover, nav b.active {
-            background: rgba(255, 255, 255, 0.15);
-        }
+        
+       
         
         .page-title p {
             font-size: 18px;
@@ -411,7 +398,13 @@
             .header {
                 padding: 20px;
             }
-         
+            
+            nav a {
+                padding: 8px 15px;
+                font-size: 14px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            
             .page-title {
                 padding: 30px 20px 15px;
             }
@@ -441,7 +434,7 @@
         .container {
             max-width: 1200px;
             width: 100%;
-            background: rgba(252, 251, 227, 0.95);
+            background: rgba(216, 247, 209, 0.95);
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
             overflow: hidden;
@@ -489,18 +482,77 @@
             gap: 30px;
             margin-top: 20px;
         }
-        
         .card {
-            background: linear-gradient(145deg, #dff8e3, #b0bdf8);
-            border-radius: 20%;
-            box-shadow: 0 8px 25px rgba(0, 4, 255, 0.08);
+            background: linear-gradient(145deg, #f9fd00, #ffffff);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             padding: 30px;
             transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            border: 1px solid #15ff00;
+            border: 1px solid #eaeaea;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .card-a {
+            background: linear-gradient(145deg, #94d0f8, #ffffff);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid #eaeaea;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .card-b {
+            background: linear-gradient(145deg, #f2cbfb, #ffffff);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid #eaeaea;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .card-c {
+            background: linear-gradient(145deg, #51f962, #ffffff);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid #eaeaea;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+         .card-d {
+            background: linear-gradient(145deg, #a3f5f8, #ffffff);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid #eaeaea;
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -508,10 +560,11 @@
         
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 229, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(41, 128, 185, 0.2);
         }
         
         .card::before {
+            content: '';
             position: absolute;
             top: -50%;
             left: -50%;
@@ -529,8 +582,8 @@
         }
         
         .submit-btn {
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            color: white;
+            background: linear-gradient(145deg, #00f7ff, #00f7ff);
+            color: rgb(246, 111, 234);
             border: none;
             padding: 16px 40px;
             font-size: 1.1rem;
@@ -560,7 +613,7 @@
             font-size: 1.2rem;
         }
         .submit-btn a{
-            color: rgb(0, 255, 0);
+            color: rgb(0, 7, 197);
             font-size: 1.2rem;
         }
          
@@ -650,7 +703,7 @@
         
         .footer {
             margin-top: 50px;
-            color: rgb(255, 255, 255);
+            color: lch(87.71% 1.03 110.02);
             font-size: 1rem;
             border-top: 1px solid #ecf0f1;
             padding-top: 20px;
@@ -659,15 +712,11 @@
             margin-left: auto;
             margin-right: auto;
         }
-          
+        
         .footer a {
-            color: #01fc05;
+            color: #72f874;
             text-decoration: none;
-            font-size: 1.0rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            letter-spacing: 0.1px;
-            font-family: 'Trebuchet MS';
+            transition: all 0.3s;
         }
         
         .footer a:hover {
@@ -689,7 +738,7 @@
             h1 {
                 font-size: 2.2rem;
             }
-           
+            
             .subtitle {
                 font-size: 1.1rem;
             }
@@ -714,7 +763,7 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        
+     
     </style>
 </head>
 <body>
@@ -734,10 +783,9 @@
                 <nav>
                     <ul>
                         <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="research.html" class="active">Research</a></li>
+                        <li><a href="math_materials.html" class="active">Study Materials</a></li>
                         <li><a href="https://www.youtube.com/@A.i.J.A.Z/videos" class="active">YouTube</a></li>
                         <li><a href="contact.html" class="active">Contact</a></li>
-                        
                     </ul>
                 </nav>
             </div>
@@ -745,51 +793,338 @@
         
         <div class="container">
 
-<h2 class="page-title">Mathematics Study Materials
-    <!--<h2>Access Course Materials, Lecture Notes, Entrance Exams Guidance etc for all Mathematics Courses</h2>-->
+<h2 class="page-title">Student Lecture Notes - PG
+    <!--<h2>Access Course Materials, Lecture Notes & Assignments for all Undergraduate Mathematics Courses</h2>-->
 </h2>
 </div>
-
-   <!-- <button type="submit" class="submit-btn">
-        <i class="fas fa-paper-plane"></i><a href="https://docs.google.com/forms/d/e/1FAIpQLScFFTVDpIur2R8PnATIxqWhfwhe6JujjTUUDoi8PRxxWJUA3A/viewform?usp=sharing&ouid=103940080716725892720"> Click Here to Register Your Details with Us</a>
-    </button>-->
+    <button type="submit" class="submit-btn">
+        <i class="fas fa-paper-plane"></i><a href="resource/PG_Syllabus_2024_onwards_UoK.pdf">MA/MSc Mathematics Syllabus - UoK</a>
+    </button>
 
         <!-- Main Content -->
         <div class="grid">
             <!-- Semester I-II-III -->
-             <div class="card">
-            <nav><ul><a href="teaching_ug.html" class="active"><h3>UG Mathematics <br> -------------------- <br> All Cources</h3></a></ul></nav>                               
-            </div>
- 
-            <div class="card">
-            <nav><ul><a href="materials_pg.html" class="active"><h3>PG Mathematics <br> -------------------- <br> All Cources</h3></a></ul></nav>                
-            </div>
-            
-            <div class="card">
-                <!-- <div class="math-icon">
-                   <i class="fas fa-calculator"></i>
+            <div class="card-a">
+                <!--<div class="math-icon">
+                    <i class="fas fa-calculator"></i>
                 </div>-->
-                <nav><ul><a href="materials_entrance.html" class="active"><h3>NET/SET/GATE/KU <br> ------------------------- <br> Entrance Exams </h3></a></ul></nav>
-                
-            </div>
-           
-            
-            <div class="card">
-            <nav><ul><a href="#" class="active"><h3>Notes for <br> --------------- <br> 11th & 12th </h3></a></ul></nav>                               
+                <h3>Abstract Algebra-I <br> (MMT24101Cr)</h3>
+                <!--<h3 class="chapter">Chapter 1</h3>-->
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
             </div>
             
-            <div class="card">
-            <nav><ul><a href="#" class="active"><h3> Mathematics for <br> --------------- <br> IAS/KAS/JKSSB </h3></a></ul></nav>                               
+            <div class="card-a">
+                <!--<div class="math-icon">
+                    <i class="fas fa-shapes"></i>
+                </div>-->
+                <h3>Real Analysis-I <br> (MM24102CR)</h3>
+                <!--<h3 class="chapter">Chapter 1</h3>-->
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
             </div>
-
-            <div class="card">
-            <nav><ul><a href="#" class="active"><h3> ? <br> --------------- <br> ? </h3></a></ul></nav>                               
+            
+            <div class="card-a">
+                <!--<div class="math-icon">
+                    <i class="fas fa-infinity"></i>
+                </div>-->
+                <h3>Topology <br> (MM24103CR)</h3>
+                <!--<h3 class="chapter">Chapter 1</h3>-->
+                <button class="download-btn">
+                   <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
             </div>
-
+            <!--Semester IV-->
+            <div class="card-a">
+                <!--<div class="math-icon">
+                    <i class="fas fa-infinity"></i>
+                </div>-->
+                <h3>Theory of Probability<br> (MM24104CR)</h3>
+                <!--<h3 class="chapter">Chapter 1</h3>-->
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <div class="card-a">
+               <!-- <div class="math-icon">
+                    <i class="fas fa-infinity"></i>
+                </div>-->
+                <h3>Theory of Matrices <br> (MMT24105DCE)</h3>
+                <!--<h3 class="chapter">Chapter 1</h3>-->
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <div class="card-a">
+               <!-- <div class="math-icon">
+                    <i class="fas fa-infinity"></i>
+                </div>-->
+                <h3>Theory of Numbers-I <br> (MM24106DCE)</h3>
+                <!--<h3 class="course">Theory of Numbers</h3>-->
+                <!--<h3 class="chapter">Chapter 1</h3>-->
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <!--Semester V-->
+            <div class="card-a">
+              <!--  <div class="math-icon">
+                    <i class="fas fa-infinity"></i>
+                </div>-->
+                <h3>Numerical Analysis <br> (MM24107DCE)</h3>
+                <!--<h3 class="course">Theory of Numbers</h3>-->
+                <!--<h3 class="chapter">Chapter 1</h3>-->
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <div class="card-a">
+                <!--<div class="math-icon">
+                    <i class="fas fa-infinity"></i>
+                </div>-->
+                <h3>Computational Mathematics (MM24108DCE)</h3>
+                <!--<h3 class="course">Theory of Numbers</h3>-->
+                <!--<h3 class="chapter">Chapter 1</h3>-->
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <div class="card">
+                <!--<div class="math-icon">
+                    <i class="fas fa-infinity"></i>
+                </div>-->
+                <h3>Numerical Methods (MM24001GE)</h3>
+                <!--<h3 class="course">Theory of Numbers</h3>-->
+                <!--<h3 class="chapter">Chapter 1</h3>-->
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+<!--SEMESTER VI-->
+<div class="card">
+               <!-- <div class="math-icon">
+                    <i class="fas fa-infinity"></i>
+                </div>-->
+                <h3>Calculus <br> (MM24001OE)</h3>
+                <!--<h3 class="course">Theory of Numbers</h3>-->
+                <!--<h3 class="chapter">Chapter 1</h3>-->
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <div class="card-b">
+               <!-- <div class="math-icon">
+                    <i class="fas fa-infinity"></i>
+                </div>-->
+                <h3>Disrete Mathematics <br> (MM24201CR)</h3>
+                <!--<h3 class="course">Theory of Numbers</h3>-->
+                <!--<h3 class="chapter">Chapter 1</h3>-->
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <div class="card-b">
+                <h3>Real Analysis-II <br> (MM24202CR)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <div class="card-b">
+                <h3>Complex Analysis-I <br> (MM24203CR)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <div class="card-b">
+                <h3>Advanced Calculus <br> (MM24204CR)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <div class="card-b">
+                <h3>Theory of Numbers-II <br> (MM24205DCE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <div class="card-b">
+                <h3>Operations Research <br> (MM24206DCE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <div class="card-b">
+                <h3>Biomathematics <br> (MM24207DCE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <div class="card-b">
+                <h3>Integral Equations<br> (MM24208DCE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <div class="card-b">
+                <h3>Laplace Transform<br> (MM24209DCE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <div class="card">
+                <h3>Complex Variables<br> (MM24002GE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+            <div class="card">
+                <h3>Matrix Algebra<br> (MM24002OE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+            </div>
+        <div class="card-c">
+                <h3>Ordinary Differential Equations<br> (MM24301CR)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-c">
+                <h3>Complex Analysis II<br> (MM24302CR)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-c">
+                <h3>Functional Analysis I<br> (MM24303CR)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-c">
+                <h3>Fourier Analysis<br> (MM24304CR)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-c">
+                <h3>Advanced Graph Theory<br> (MM24305DCE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-c">
+                <h3>Abstract Measure Theory<br> (MM24306DCE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-c">
+                <h3>Python for Mathematics<br> (MM18307DCE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-c">
+                <h3>Wavelet Theory<br> (MM24308DCE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card">
+                <h3>Laplace and Fourier Transformations<br> (MM24003GE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+         <div class="card">
+                <h3>Introduction to Mathematical Modelling<br> (MM24003OE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <!--__________SEMESTER IV________-->
+        <div class="card-d">
+                <h3>Partial DIfferntial Equations<br> (MM24401CR)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-d">
+                <h3>Differential Geometry<br> (MM24402CR)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-d">
+                <h3>Abstract Algebra II<br> (MM24403CR)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-d">
+                <h3>Linear Algebra<br> (MM24404CR)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-d">
+                <h3>Analytic Theory of Polynomials<br> (MM24405DCE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-d">
+                <h3>Mathematical Statistics<br> (MM24406DCE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-d">
+                <h3>Functional Analysis II<br> (MM24407DCE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-d">
+                <h3>Non-Linear Analysis<br> (MM24408DCE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-d">
+                <h3>Advanced Topics in Topology and Modern Analysis<br> (MM24409DCE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card-d">
+                <h3>PROJECT<br> (MM24410DCE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        <div class="card">
+                <h3>Applied Differential Equations<br> (MM24004GE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+         <div class="card">
+                <h3>Discrete Mathematics<br> (MM24004OE)</h3>
+                <button class="download-btn">
+                <a href="#" class="publication-link view"> Download <i class="fas fa-download"></i>(NA)</a>
+                </button>
+        </div>
+        
+        
 
         </div>
+        <!--__________FOOTER________-->
         <div class="footer">
-            <p>All course materials are provided in PDF format. For any issues, queries or suggestions <a href="feedback.html">Please Click Here</a></p>
+            <p>All course materials are provided in PDF format. For any issues with downloads, contact <a href="contact.html">Your Faculty</a></p>
             <p>© 2025 - Developed and Maintained by Dr. Aijaz</p>
         </div>
     </div>

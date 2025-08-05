@@ -213,6 +213,19 @@
             
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
         * {
             margin: 0;
             padding: 0;
@@ -266,39 +279,13 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-family: 'Poppins';
-            font-size: 14px;
         }
-         nav a:hover, nav a.active {
+        
+        nav a:hover, nav a.active {
             background: rgba(255, 255, 255, 0.15);
         }
-
-         nav h2 {
-            color: rgb(17, 21, 95);
-            font-size: 19px;
-            font-weight: 600;
-            padding: 8px 20px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
-
-         nav h3 {
-            color: rgb(0, 0, 0);
-            font-size: 16px;
-            font-weight: 600;
-            padding: 8px 20px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-family: 'Times New Roman';
-        }
-
-         nav b:hover, nav b.active {
-            background: rgba(255, 255, 255, 0.15);
-        }
+        
+       
         
         .page-title p {
             font-size: 18px;
@@ -411,7 +398,13 @@
             .header {
                 padding: 20px;
             }
-         
+            
+            nav a {
+                padding: 8px 15px;
+                font-size: 14px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            
             .page-title {
                 padding: 30px 20px 15px;
             }
@@ -420,6 +413,25 @@
                 font-size: 28px;
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           * {
             margin: 0;
@@ -439,15 +451,19 @@
         }
         
         .container {
-            max-width: 1200px;
-            width: 100%;
-            background: rgba(252, 251, 227, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            padding: 40px;
-            position: relative;
-        }
+    max-width: 1200px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    
+    /* If you want the container to be a grid, you add this line: */
+    display: grid;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 40px;
+    position: relative;
+}
         
         .header {
             text-align: center;
@@ -485,22 +501,50 @@
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .grid-papers {
+            background: linear-gradient(145deg, #2bff00, #2bff00);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .grid-papers-csir {
+            background: linear-gradient(145deg, #f2ff00, #f2ff00);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .grid-papers-gate {
+            background: linear-gradient(145deg, #d400ff, #d400ff);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .grid-papers-tifr {
+            background: linear-gradient(145deg, #fff200, #fff200);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
             gap: 30px;
             margin-top: 20px;
         }
         
         .card {
-            background: linear-gradient(145deg, #dff8e3, #b0bdf8);
-            border-radius: 20%;
-            box-shadow: 0 8px 25px rgba(0, 4, 255, 0.08);
+            background: linear-gradient(145deg, #ffffff, #ffffff);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             padding: 30px;
             transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            border: 1px solid #15ff00;
+            border: 1px solid #eaeaea;
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -508,10 +552,11 @@
         
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 229, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(41, 128, 185, 0.2);
         }
         
         .card::before {
+            content: '';
             position: absolute;
             top: -50%;
             left: -50%;
@@ -527,20 +572,67 @@
             opacity: 1;
             transform: scale(1.2);
         }
-        
+        .grid-button {
+    display: flex;  
+    align-items: center;   
+    text-align: left;      
+    width: 100%;
+    /* --- Appearance --- */
+    background: linear-gradient(145deg, #00f2ff, #00f2ff);
+    color: #0056b3;
+    text-decoration: underline;
+    border: none;
+    border-radius: 12px;
+    padding: 18px 24px;
+    /* --- Text Styling --- */
+    font-size: 1.1rem;
+    font-weight: 600;
+    /* --- Interactivity --- */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+.grid-papers-button {
+    display: flex;  
+    align-items: center;   
+    text-align: left;      
+    width: 100%;
+    /* --- Appearance --- */
+    background: linear-gradient(145deg, #000000, #000000);
+    color: #0dff00;
+    text-decoration: underline;
+    border: none;
+    border-radius: 12px;
+    padding: 18px 24px;
+    /* --- Text Styling --- */
+    font-size: 1.1rem;
+    font-weight: 600;
+    /* --- Interactivity --- */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.grid-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+.button-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem; 
+}
         .submit-btn {
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            background: linear-gradient(145deg, #ffffff, #ffffff);
             color: white;
             border: none;
             padding: 16px 40px;
             font-size: 1.1rem;
             font-weight: 600;
-            border-radius: 40px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+           
             gap: 12px;
             width: 100%;
             margin-top: 30px;
@@ -560,7 +652,7 @@
             font-size: 1.2rem;
         }
         .submit-btn a{
-            color: rgb(0, 255, 0);
+            color: rgb(0, 0, 0);
             font-size: 1.2rem;
         }
          
@@ -593,7 +685,7 @@
         }
         
         .download-btn {
-            background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+            background: linear-gradient(135deg, #00f2ff 0%, #00f2ff 100%);
             color: white;
             border: none;
             padding: 14px 35px;
@@ -650,7 +742,7 @@
         
         .footer {
             margin-top: 50px;
-            color: rgb(255, 255, 255);
+            color: lch(87.71% 1.03 110.02);
             font-size: 1rem;
             border-top: 1px solid #ecf0f1;
             padding-top: 20px;
@@ -659,15 +751,11 @@
             margin-left: auto;
             margin-right: auto;
         }
-          
+        
         .footer a {
-            color: #01fc05;
+            color: #72f874;
             text-decoration: none;
-            font-size: 1.0rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            letter-spacing: 0.1px;
-            font-family: 'Trebuchet MS';
+            transition: all 0.3s;
         }
         
         .footer a:hover {
@@ -689,7 +777,7 @@
             h1 {
                 font-size: 2.2rem;
             }
-           
+            
             .subtitle {
                 font-size: 1.1rem;
             }
@@ -714,7 +802,44 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        
+     .split-button {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;      
+    
+    background-color: #000000;
+    border-radius: 20px;
+    padding: 18px 24px;
+    width: 100%;
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.split-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.split-link {
+    color: #4cff4c;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.split-link:hover {
+    color: #a1ffaa;
+}
+
+.separator {
+    color: #4cff4c;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 8px;
+    text-decoration: none;
+}
     </style>
 </head>
 <body>
@@ -734,60 +859,194 @@
                 <nav>
                     <ul>
                         <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="research.html" class="active">Research</a></li>
+                        <li><a href="math_materials.html" class="active">Study Materials</a></li>
                         <li><a href="https://www.youtube.com/@A.i.J.A.Z/videos" class="active">YouTube</a></li>
                         <li><a href="contact.html" class="active">Contact</a></li>
-                        
                     </ul>
                 </nav>
             </div>
         </header>
-        
+
         <div class="container">
 
-<h2 class="page-title">Mathematics Study Materials
-    <!--<h2>Access Course Materials, Lecture Notes, Entrance Exams Guidance etc for all Mathematics Courses</h2>-->
+<h2 class="page-title"> Mathematics Materials for Entrance Examinations
 </h2>
 </div>
+<div class="submit-btn">
+<a> Notes for CSIR-NET(JRF)/SET/GATE/NBHM/TIFR etc</a>
+</div>
+<br>
+<div class="button-grid-container">
+    <a href="link-to-matrices.html" class="grid-button">Matrices and Linear Algebra</a>
+    <a href="link-to-page-2.html" class="grid-button">Theory of Numbers</a>
+    <a href="link-to-page-3.html" class="grid-button">Groups, Rings and Fields</a>
+    <a href="link-to-page-4.html" class="grid-button">Complex Analysis</a>
+    <a href="link-to-page-5.html" class="grid-button">Ordinary and Partial Differential Equations</a>
+    <a href="link-to-page-6.html" class="grid-button">Integral Equations and Calculus of Variations</a>
+    <a href="link-to-page-7.html" class="grid-button">Numerical Analysis and Operations Research</a>
+    <a href="link-to-page-8.html" class="grid-button">Topology and Real Analysis</a>
 
-   <!-- <button type="submit" class="submit-btn">
-        <i class="fas fa-paper-plane"></i><a href="https://docs.google.com/forms/d/e/1FAIpQLScFFTVDpIur2R8PnATIxqWhfwhe6JujjTUUDoi8PRxxWJUA3A/viewform?usp=sharing&ouid=103940080716725892720"> Click Here to Register Your Details with Us</a>
-    </button>-->
+</div>
+<div class="submit-btn">
+<a> Previous Years' Entrance Papers</a>
+</div>
+<br>
 
-        <!-- Main Content -->
-        <div class="grid">
-            <!-- Semester I-II-III -->
-             <div class="card">
-            <nav><ul><a href="teaching_ug.html" class="active"><h3>UG Mathematics <br> -------------------- <br> All Cources</h3></a></ul></nav>                               
-            </div>
- 
-            <div class="card">
-            <nav><ul><a href="materials_pg.html" class="active"><h3>PG Mathematics <br> -------------------- <br> All Cources</h3></a></ul></nav>                
-            </div>
-            
-            <div class="card">
-                <!-- <div class="math-icon">
-                   <i class="fas fa-calculator"></i>
-                </div>-->
-                <nav><ul><a href="materials_entrance.html" class="active"><h3>NET/SET/GATE/KU <br> ------------------------- <br> Entrance Exams </h3></a></ul></nav>
-                
-            </div>
-           
-            
-            <div class="card">
-            <nav><ul><a href="#" class="active"><h3>Notes for <br> --------------- <br> 11th & 12th </h3></a></ul></nav>                               
-            </div>
-            
-            <div class="card">
-            <nav><ul><a href="#" class="active"><h3> Mathematics for <br> --------------- <br> IAS/KAS/JKSSB </h3></a></ul></nav>                               
-            </div>
+<div class="grid-papers-csir">
+    <a href="link-to-page-2.html" class="grid-papers-button">CSIR NET 2024</a>
+    <a href="link-to-page-2.html" class="grid-papers-button">CSIR NET 2023</a>
+    <a href="link-to-page-3.html" class="grid-papers-button">CSIR NET 2022</a>
+    <a href="link-to-page-4.html" class="grid-papers-button">CSIR NET 2021</a>
+    <a href="link-to-page-5.html" class="grid-papers-button">CSIR NET 2020</a>
+    <a href="link-to-page-6.html" class="grid-papers-button">CSIR NET 2019</a>
+    <a href="link-to-page-7.html" class="grid-papers-button">CSIR NET 2018</a>
+    <a href="link-to-page-8.html" class="grid-papers-button">CSIR NET 2017</a>
+    <a href="link-to-page-8.html" class="grid-papers-button">CSIR NET 2016</a>
+    <a href="link-to-page-8.html" class="grid-papers-button">CSIR NET 2015</a>
+</div>
+<div class="grid-papers">
+<div class="split-button">
+    <a href="resource/nbhm2025.pdf" class="split-link" download>NBHM 2025</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2025key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2024.pdf" class="split-link" download>NBHM 2024</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2024key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2023.pdf" class="split-link" download>NBHM 2023</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2023key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2022.pdf" class="split-link" download>NBHM 2022</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2022key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2021.pdf" class="split-link" download>NBHM 2021</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2021key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2020.pdf" class="split-link" download>NBHM 2020</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2020key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2019.pdf" class="split-link" download>NBHM 2019</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2019key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2018.pdf" class="split-link" download>NBHM 2018</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2018key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2017.pdf" class="split-link" download>NBHM 2017</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2017key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2016.pdf" class="split-link" download>NBHM 2016</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2016key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2015.pdf" class="split-link" download>NBHM 2015</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2015key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2014.pdf" class="split-link" download>NBHM 2014</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2014key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2013.pdf" class="split-link" download>NBHM 2013</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2013key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2012.pdf" class="split-link" download>NBHM 2012</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2012key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2011.pdf" class="split-link" download>NBHM 2011</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2011key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2010.pdf" class="split-link" download>NBHM 2010</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2010key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2009.pdf" class="split-link" download>NBHM 2009</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2009key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2008.pdf" class="split-link" download>NBHM 2008</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2008key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2007.pdf" class="split-link" download>NBHM 2007</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2007key.pdf" class="split-link key-link" download>Key</a>
+</div>
+<div class="split-button">
+    <a href="resource/nbhm2006.pdf" class="split-link" download>NBHM 2006</a>
+    <span class="separator">-</span>
+    <a href="resource/nbhm2006key.pdf" class="split-link key-link" download>Key</a>
+</div>
+</div>
 
-            <div class="card">
-            <nav><ul><a href="#" class="active"><h3> ? <br> --------------- <br> ? </h3></a></ul></nav>                               
-            </div>
+<div class="grid-papers-gate">
+    <a href="resource/MA2024.pdf" class="grid-papers-button">GATE 2024</a>
+    <a href="resource/MA2023.pdf" class="grid-papers-button">GATE 2023</a>
+    <a href="resource/MA2022.pdf" class="grid-papers-button">GATE 2022</a>
+    <a href="resource/MA2021.pdf" class="grid-papers-button">GATE 2021</a>
+    <a href="resource/MA2020.pdf" class="grid-papers-button">GATE 2020</a>
+    <a href="resource/MA2019.pdf" class="grid-papers-button">GATE 2019</a>
+    <a href="resource/MA2018.pdf" class="grid-papers-button">GATE 2018</a>
+    <a href="resource/MA2017.pdf" class="grid-papers-button">GATE 2017</a>
+    <a href="resource/MA2016.pdf" class="grid-papers-button">GATE 2016</a>
+    <a href="resource/MA2015.pdf" class="grid-papers-button">GATE 2015</a>
+    <a href="resource/MA2014.pdf" class="grid-papers-button">GATE 2014</a>
+    <a href="resource/MA2013.pdf" class="grid-papers-button">GATE 2013</a>
+    <a href="resource/MA2012.pdf" class="grid-papers-button">GATE 2012</a>
+    <a href="resource/MA2011.pdf" class="grid-papers-button">GATE 2011</a>
+    <a href="resource/MA2010.pdf" class="grid-papers-button">GATE 2010</a>
+    <a href="resource/MA2009.pdf" class="grid-papers-button">GATE 2009</a>
+    <a href="resource/MA2008.pdf" class="grid-papers-button">GATE 2008</a>
+</div>
 
+<div class="grid-papers-tifr">
+    <a href="resource/tifr_2025.pdf" class="grid-papers-button">TIFR 2025</a>
+    <a href="resource/tifr_2024.pdf" class="grid-papers-button">TIFR 2024</a>
+    <a href="resource/tifr_2023.pdf" class="grid-papers-button">TIFR 2023</a>
+    <a href="resource/tifr_2022.pdf" class="grid-papers-button">TIFR 2022</a>
+    <a href="resource/tifr_2021.pdf" class="grid-papers-button">TIFR 2021</a>
+    <a href="resource/tifr_2020.pdf" class="grid-papers-button">TIFR 2020</a>
+    <a href="resource/tifr_2019.pdf" class="grid-papers-button">TIFR 2019</a>
+    <a href="resource/tifr_2018.pdf" class="grid-papers-button">TIFR 2018</a>
+    <a href="resource/tifr_2017.pdf" class="grid-papers-button">TIFR 2017</a>
+    <a href="resource/tifr_2016.pdf" class="grid-papers-button">TIFR 2016</a>
+    <a href="resource/tifr_2015.pdf" class="grid-papers-button">TIFR 2015</a>
+    <a href="resource/tifr_2014.pdf" class="grid-papers-button">TIFR 2014</a>
+    <a href="resource/tifr_2013.pdf" class="grid-papers-button">TIFR 2013</a>
+    <a href="resource/tifr_2012.pdf" class="grid-papers-button">TIFR 2012</a>
+    <a href="resource/tifr_2011.pdf" class="grid-papers-button">TIFR 2011</a>
+    <a href="resource/tifr_2010.pdf" class="grid-papers-button">TIFR 2010</a>
 
-        </div>
+</div>
+
         <div class="footer">
             <p>All course materials are provided in PDF format. For any issues, queries or suggestions <a href="feedback.html">Please Click Here</a></p>
             <p>© 2025 - Developed and Maintained by Dr. Aijaz</p>
