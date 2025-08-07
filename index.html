@@ -152,7 +152,7 @@
         
         .links a {
             text-decoration: none;
-            color: #555;
+            color: #555555;
             font-size: 16px;
             font-weight: 400;
             transition: all 0.3s ease;
@@ -248,26 +248,38 @@
             color: #2c2b2b;
             margin-bottom: 15px;
         }
-
         .column {
             display: flex;
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
             margin-top: 15px;
+            columns: repeat(3, 1fr);
         }
         .column a {
-            color: rgb(0, 0, 0);
+            border: none;
+            padding: 6px 10px;
+            border-radius: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            margin-top: 30px;
+
+            color: rgb(255, 255, 255);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 600;
+            width: 100%;
             transition: all 0.3s ease;
             letter-spacing: 1px;
             font-family: 'Trebuchet MS';
         }
         .column a:hover, .column a.active {
-            background: rgba(163, 243, 247, 0.15);
-            border-radius: 20%;
+            background: rgb(0, 0, 255);
+            border-radius: 5%;
 
         }
         
@@ -297,7 +309,64 @@
                 width: 140px;
                 height: 140px;
             }
+        }
 
+.grid-button {
+    display: flex;  
+    align-items: center;   
+    text-align: left;      
+    width: 100%;
+    /* --- Appearance --- */
+    background: linear-gradient(145deg, #00f2ff, #00f2ff);
+    color: #0056b3;
+    text-decoration: underline;
+    border: none;
+    border-radius: 12px;
+    padding: 18px 24px;
+    /* --- Text Styling --- */
+    font-size: 1.1rem;
+    font-weight: 600;
+    /* --- Interactivity --- */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+.grid-papers-button {
+    display: flex;  
+    align-items: center;   
+    text-align: left;      
+    width: 100%;
+    /* --- Appearance --- */
+    background: linear-gradient(145deg, #001eff, #001eff);
+    color: #0dff00;
+    text-decoration: underline;
+    border: none;
+    border-radius: 12px;
+    padding: 18px 24px;
+    /* --- Text Styling --- */
+    font-size: 1.1rem;
+    font-weight: 600;
+    /* --- Interactivity --- */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.grid-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+.button-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem; 
+}
+.grid-papers-csir {
+            background: linear-gradient(145deg, #f2ff00, #f2ff00);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -325,37 +394,45 @@
 
         <div class="content">
             <div class="column">
-                <h2 class="column-title">Student Academic Services</h2>
+                <!--<h2 class="column-title">Student Academic Services</h2>-->
                 <ul class="links">
-                    <li><a href="math_materials.html" class="active">Study Materials</a></li>
+                    <li><a href="math_materials.html" class="active"> Study Materials </a></li>
                 </ul>
             </div>
             
              <div class="column">
-                <h2 class="column-title"> My YouTube</h2>
+                <!--<h2 class="column-title"> My YouTube</h2>-->
                 <ul class="links">
-                    <li><a href="https://www.youtube.com/@A.i.J.A.Z/videos" class="active">YouTube</a></li>
+                    <li><a href="https://www.youtube.com/@A.i.J.A.Z/videos" class="active"> YouTube </a></li>
                     
                 </ul>
             </div>
 
             
             <div class="column">
-                <h2 class="column-title">Research</h2>
+                <!--<h2 class="column-title">Research</h2>-->
                 <ul class="links">
-                    <li><a href="research.html" class="active">My Research Publications</a></li>
+                    <li><a href="research.html" class="active">My Research </a></li>
                     
                 </ul>
             </div>
 
             <div class="column">
-                <h2 class="column-title">Contact</h2>
+                <!--<h2 class="column-title">Contact</h2>-->
                 <ul class="links">
                     <li><a href="contact.html" class="active">Faculty Links</a></li>
                 </ul>
             </div>
         </div>
          <p class="student-links"><a href="links.html">Important Links for Students</a></p>
+
+<!--<div class="grid-papers-csir">
+    <a href="link-to-page-2.html" class="grid-papers-button">UG Mathematics</a>
+    <a href="link-to-page-2.html" class="grid-papers-button">PG Mathematics</a>
+    <a href="link-to-page-3.html" class="grid-papers-button">Entrance Mathematics</a>
+
+</div>-->
+        
         <div class="footer">
         
         <!--<div class="department"><a href="links.html">Important Links for Students</a></div>-->
