@@ -113,12 +113,19 @@
         
         .page-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--primary);
             margin-bottom: 15px;
             padding-bottom: 15px;
             border-bottom: 3px solid var(--secondary);
             position: relative;
+        }
+        .page-title a {
+            font-size: 25px;
+            text-align: center;
+            color: var(--primary);
+            position: relative;
+            font-family: 'Poppins';
         }
         
         .page-title:after {
@@ -273,7 +280,7 @@
         }
         
         .page-title p {
-            font-size: 18px;
+            font-size: 1px;
             color: #555;
             max-width: 600px;
             margin: 0 auto;
@@ -507,14 +514,15 @@
             transform: scale(1.2);
         }
         
+
         .submit-btn {
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            color: white;
+            background: linear-gradient(145deg, #2200ff, #2200ff);
+            color: rgb(246, 111, 234);
             border: none;
             padding: 16px 40px;
             font-size: 1.1rem;
             font-weight: 600;
-            border-radius: 40px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
@@ -693,12 +701,7 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        
        
-        
-       
-        
-        
     </style>
 </head>
 <body>
@@ -717,7 +720,7 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
                         <li><a href="math_materials.html" class="active">Study Materials</a></li>
                         <li><a href="https://www.youtube.com/@A.i.J.A.Z/videos" class="active">YouTube</a></li>
                         <li><a href="contact.html" class="active">Contact</a></li>
@@ -729,9 +732,9 @@
         
         <div class="container">
 
-<h2 class="page-title">Student Lecture Notes - UG
-    <h2>Access Course Materials, Lecture Notes & Assignments for all Undergraduate Mathematics Courses</h2>
-</h2>
+<h2 class="page-title">Student Lecture Notes - UG</h2>
+<a> Access Course Materials, Lecture Notes & Assignments for all Undergraduate Mathematics Courses</a>
+
 </div>
 
     <button type="submit" class="submit-btn">
