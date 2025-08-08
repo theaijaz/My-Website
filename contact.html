@@ -143,6 +143,7 @@
         .page-title {
             text-align: center;
             padding: 40px 20px;
+            font-size: 16px;
             background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), 
                         url('https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80');
             background-size: cover;
@@ -181,12 +182,7 @@
             padding: 40px 0 60px;
         }
         
-        .faculty-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
+        
         
         .faculty-card {
             background: rgb(222, 249, 246);
@@ -207,6 +203,13 @@
         .card-header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: rgb(251, 251, 251);
+            padding: 30px 20px 25px;
+            text-align: center;
+            position: relative;
+        }
+        .links-header {
+            background: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
             padding: 30px 20px 25px;
             text-align: center;
             position: relative;
@@ -367,6 +370,12 @@
             font-size: 1rem;
         }
         
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
         /* Responsive */
         @media (max-width: 900px) {
             header {
@@ -391,7 +400,7 @@
             }
             
             .page-title h2 {
-                font-size: 2rem;
+                font-size: 20px;
             }
             
             .faculty-section {
@@ -406,12 +415,6 @@
                 padding: 25px 20px;
             }
         }
-
-
-
-
-
-
 
         .contact-info {
             background: #f8f9fa;
@@ -479,19 +482,18 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                         <li><a href="math_materials.html">Study Materials</a></li>
                         <li><a href="https://www.youtube.com/@A.i.J.A.Z/videos">YouTube</a></li>
                         <li><a href="research.html">Research</a></li>
-                        
                     </ul>
                 </nav>
             </div>
         </header>
         <!-- Page Title -->
-        <div class="page-title">
+        <div class="links-header">
             <h2>Faculty Links</h2>
-            <p>Get in touch with us. We're here to assist with your academic inquiries, research collaborations, and any questions you may have about our programs.</p>
+           <a> Get in touch with us. We're here to assist with your academic inquiries, research collaborations, and any questions you may have about our programs.</a>
         </div>
         
         <!-- Faculty Contacts -->
@@ -520,7 +522,7 @@
                                 <i class="fas fa-phone"></i>
                                 <div class="contact-detail">
                                     <h4>Phone</h4>
-                                    <p>+91 9469794549</p>
+                                    <p>+91 7006758573</p>
                                 </div>
                             </li>
                             <li>
@@ -563,7 +565,7 @@
                                 <i class="fas fa-phone"></i>
                                 <div class="contact-detail">
                                     <h4>Phone</h4>
-                                    <p>+91xxxxxxxx</p>
+                                    <p>+917006758573</p>
                                 </div>
                             </li>
                             <li>
