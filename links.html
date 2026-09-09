@@ -813,40 +813,80 @@
             font-family: 'Times New Roman';
         }
 
-        /* Numbered academic link lists */
-        .academic-links {
-            padding-left: 35px;
-            margin-top: 20px;
-            margin-bottom: 0;
-        }
+/* ----- Compact Numbered Academic Links ----- */
 
-        .academic-links li {
-            margin-bottom: 14px;
-            padding-left: 5px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            line-height: 1.5;
-        }
+.academic-links {
+    padding-left: 32px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    list-style-type: decimal;
+    list-style-position: outside;
+    font-family: 'Times New Roman', Times, serif;
+}
 
-        .academic-links li a {
-            text-decoration: none;
-            color: #0645ad;
-        }
+.academic-links li {
+    margin-bottom: 4px;
+    padding-left: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: #2c3e50;
+}
 
-        .academic-links li a:hover {
-            text-decoration: underline;
-            color: #003080;
-        }
+/* Serial numbers */
+.academic-links li::marker {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    color: #2c3e50;
+}
 
-        @media (max-width: 600px) {
-            .academic-links {
-                padding-left: 28px;
-            }
+/* Link text */
+.academic-links li a {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-decoration: none;
+    color: #0645ad;
+}
 
-            .academic-links li {
-                font-size: 1rem;
-            }
-        }
+/* Hover effect */
+.academic-links li a:hover {
+    color: #003080;
+    text-decoration: underline;
+}
+
+/* Compact headings above link lists */
+.container-ku h3,
+.container-he h3,
+.container-ai h3,
+.container-math h3,
+.container-art h3,
+.container-yt h3,
+.container-cra h3 {
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .academic-links {
+        padding-left: 26px;
+        margin-top: 6px;
+    }
+
+    .academic-links li,
+    .academic-links li a {
+        font-size: 16px;
+        line-height: 1.2;
+    }
+
+    .academic-links li {
+        margin-bottom: 3px;
+    }
+}
 
     </style>
 </head>
