@@ -16,8 +16,10 @@
 }
 
 body {
-    font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.7;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.25;
     color: var(--dark);
     background-color: #f8f9fa;
     background-image: linear-gradient(to bottom, #f8f9fa, #e9ecef);
